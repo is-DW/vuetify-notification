@@ -27,17 +27,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-
-enum XDirection {
-  LEFT = 'left',
-  CENTER = 'center',
-  RIGHT = 'right'
-}
-
-enum YDirection {
-  TOP = 'top',
-  BOTTOM = 'bottom'
-}
+import { XDirection, YDirection } from './type'
 
 @Component
 export default class HelloWorld extends Vue {
