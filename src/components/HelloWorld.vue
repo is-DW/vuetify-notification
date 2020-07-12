@@ -9,6 +9,7 @@ import { Vue, Component } from 'vue-property-decorator'
 export default class HelloWorld extends Vue {
   created () {
     console.log('hi')
+    this.$vn.MSnackbar.show({})
   }
 }
 </script>

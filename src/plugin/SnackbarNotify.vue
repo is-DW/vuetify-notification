@@ -1,6 +1,6 @@
 <template>
   <v-snackbar
-    v-model="snackbar"
+    v-model="showValue"
     :bottom="y === 'bottom'"
     :color="color"
     :left="x === 'left'"
@@ -17,7 +17,7 @@
         dark
         text
         v-bind="attrs"
-        @click="snackbar = false"
+        @click="showValue = false"
       >
         Close
       </v-btn>
@@ -41,11 +41,11 @@ enum YDirection {
 
 @Component
 export default class HelloWorld extends Vue {
-  color: string = ''
-  mode: string = ''
-  snackbar: boolean = false,
-  text: string = 'Hello, I\'m a snackbar'
-  timeout: number = 6000
+  color = ''
+  mode = ''
+  showValue = false
+  text = 'Hello, I\'m a snackbar'
+  timeout = 6000
   x: XDirection = XDirection.RIGHT
   y: YDirection = YDirection.TOP
 }
