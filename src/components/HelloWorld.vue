@@ -7,9 +7,14 @@ import { Vue, Component } from 'vue-property-decorator'
 
 @Component
 export default class HelloWorld extends Vue {
+  count = 10
   created () {
-    console.log('hi')
-    this.$vn.MSnackbar.show({})
+    setInterval(() => {
+      if (this.count > 0) {
+        this.$VuetifyMessage({ visible: true, text: `数字${this.count}` })
+        this.count--
+      }
+    }, 200)
   }
 }
 </script>

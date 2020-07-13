@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
-import MSnackBar from './plugin/index.js'
+import MessageSnackBar from './plugin/index'
 
 Vue.config.productionTip = false
-Vue.use(MSnackBar, { vuetify })
+Vue.use(MessageSnackBar)
 
 new Vue({
   vuetify,
