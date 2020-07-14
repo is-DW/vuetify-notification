@@ -1,13 +1,11 @@
-import Vue from 'vue'
 import MessageSnackBar from './MessageSnackBar.vue'
 import vuetify from '../plugins/vuetify'
-import { SnackbarOptions } from './type'
 
 let instance: any
 const instances: any = []
 let seedId = 1
 
-function MessageClose (id: any, userOnClose: any) {
+function MessageClose (id: any) {
   const len = instances.length
   let index = -1
   let removedHeight
@@ -15,9 +13,6 @@ function MessageClose (id: any, userOnClose: any) {
     if (id === instances[i].id) {
       removedHeight = instances[i].$el.firstElementChild.offsetHeight
       index = i
-      if (typeof userOnClose === 'function') {
-        userOnClose(instances[i])
-      }
       instances.splice(i, 1)
       break
     }
@@ -33,11 +28,10 @@ function MessageClose (id: any, userOnClose: any) {
  * create a new instance and mount it
  * @param options SnackbarOptions
  */
-function Message (options: SnackbarOptions) {
-  const userOnClose = options.close
+function Message (options: any) {
   const id = `message_${seedId++}`
   options.close = function () {
-    MessageClose(id, userOnClose)
+    MessageClose(id)
   }
   instance = new MessageSnackBar({
     vuetify: vuetify || {},

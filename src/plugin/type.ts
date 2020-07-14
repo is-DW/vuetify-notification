@@ -22,7 +22,7 @@ interface SnackbarOptions {
   type: InfoType;
   text: string;
   timeout: number;
-  close: Function;
+  userClose: Function | {};
 }
 
 export {

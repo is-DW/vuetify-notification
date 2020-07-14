@@ -11,7 +11,7 @@ export default class HelloWorld extends Vue {
   created () {
     setInterval(() => {
       if (this.count > 0) {
-        this.$VuetifyMessage({ visible: true, text: `数字${this.count}` })
+        this.$VuetifyMessage({ type: 'warnning' })
         this.count--
       }
     }, 200)
